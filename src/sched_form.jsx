@@ -58,7 +58,7 @@ function SchedForm(props) {
 
 						<Input
 							w={'200px'}
-							placeholder="EW200"
+							placeholder="EW200 Section 1121"
 							value={formData.name}
 							onChange={(e) => {
 								setFormData({ ...formData, name: e.target.value });

@@ -97,13 +97,13 @@ function App() {
 			<Box w={'100vw'} h={'97vh'}>
 				<Flex px={5} py={2} justify={'space-between'} alignItems={'center'} bg={'blue.600'} boxShadow={'lg'}>
 					<Box w={'100vw'} textAlign={'center'}>
-						<Heading letterSpacing={7} fontWeight={200} fontSize={'3xl'} color={'white'}>
+						<Heading letterSpacing={7} fontWeight={100} fontSize={'3xl'} color={'white'}>
 							📅 MidCal
 						</Heading>
 						<Text textColor={'gray.300'} fontSize={'xs'}>
 							USNA Course Calendar Generator
 						</Text>
-						<Text fontSize={'6px'} textColor={'gray.300'}>
+						<Text fontSize={'7px'} textColor={'gray.300'}>
 							Created by Allan Elsberry
 						</Text>
 					</Box>
@@ -150,7 +150,7 @@ function App() {
 					{allEvents.length > 0 && (
 						<Box textAlign={'center'}>
 							<Text fontSize={'xs'} fontWeight={600}>
-								{allEvents.length} Total Events
+								{allEvents.length} Periods Scheduled
 							</Text>
 							<Flex justify={'center'} mb={3}>
 								<AddToCalendarButton
@@ -210,14 +210,18 @@ function App() {
 										href="https://calendar.google.com/calendar/u/0/r/settings/export"
 										isExternal
 									>
-										Click Here to import the generated ics file to your Google Calendar
+										Visit the Google Calendar Import Page<ExternalLinkIcon mx="2px" />
 									</Link>
 								</ListItem>
 
 								<ListItem>
-									Select the <strong>my_usna_calendar.ics</strong> file you downloaded
+									Import the <strong>my_usna_calendar.ics</strong> file you downloaded
 								</ListItem>
 							</OrderedList>
+							<Text mt={3} fontSize={'xs'} fontWeight={600}>
+								Note: Each period will be imported as an individual event (not a recurring event) in
+								your Google Calendar
+							</Text>
 						</Box>
 					</Stack>
 				</Flex>

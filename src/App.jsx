@@ -4,6 +4,7 @@ import { semesterDays, semesterPeriods } from './data.js';
 import { useState } from 'react';
 import SchedForm from './sched_form.jsx';
 import crest from './assets/crest.png';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 function App() {
 	const initForm = {
@@ -87,7 +88,7 @@ function App() {
 			});
 		});
 		// return the events array
-		console.log(events);
+		console.log('CALENDAR EVENTS', events);
 		return events;
 	};
 
@@ -102,10 +103,13 @@ function App() {
 						<Text textColor={'gray.300'} fontSize={'xs'}>
 							USNA Course Calendar Generator
 						</Text>
+						<Text fontSize={'6px'} textColor={'gray.300'}>
+							Created by Allan Elsberry
+						</Text>
 					</Box>
 					<Box>
 						<Link href={'https://www.usna.edu/Academics/Calendars-Events/index.php'} isExternal>
-							<Image src={crest} alt={'USNA Crest'} h={'50'} />
+							<Image src={crest} alt={'USNA Crest'} w={'2em'} />
 						</Link>
 					</Box>
 				</Flex>
@@ -144,21 +148,36 @@ function App() {
 
 				<Flex mt={30} justify={'center'}>
 					{allEvents.length > 0 && (
-						<AddToCalendarButton
-							name="USNA Courses"
-							options={[ 'iCal' ]}
-							timeZone="America/New_York"
-							label="Download Calendar"
-							iCalFileName="my_usna_calendar"
-							dates={JSON.stringify(allEvents)}
-						/>
+						<Box textAlign={'center'}>
+							<Text fontSize={'xs'} fontWeight={600}>
+								{allEvents.length} Total Events
+							</Text>
+							<Flex justify={'center'} mb={3}>
+								<AddToCalendarButton
+									name="USNA Courses"
+									options={[ 'iCal' ]}
+									timeZone="America/New_York"
+									label="Download Calendar"
+									iCalFileName="my_usna_calendar"
+									dates={JSON.stringify(allEvents)}
+								/>
+							</Flex>
+							<Link
+								color={'blue.600'}
+								href="https://calendar.google.com/calendar/u/0/r/settings/export"
+								isExternal
+							>
+								Click Here to Import the downloaded calendar to Google<ExternalLinkIcon mx="2px" />
+							</Link>
+						</Box>
 					)}
 				</Flex>
 
-				<Flex justify={'center'}>
+				<Flex justify={'center'} mt={20}>
 					<Stack>
 						<Button
-							colorScheme="blue"
+							colorScheme="red"
+							variant={'outline'}
 							mt={2}
 							onClick={() => {
 								setShowInstructions(!showInstructions);
@@ -167,9 +186,9 @@ function App() {
 							Instructions
 						</Button>
 						<Box
-							bg="red.100"
+							bg="red.50"
 							m={2}
-							p={5}
+							p={3}
 							borderRadius={'lg'}
 							w={'400px'}
 							textAlign={'center'}
@@ -177,24 +196,32 @@ function App() {
 							display={showInstructions ? 'block' : 'none'}
 						>
 							<OrderedList>
-								<ListItem>Input Course Information</ListItem>
-								<ListItem>Select Generate Calendar</ListItem>
-								<ListItem>Select Download Calendar -> iCal File</ListItem>
-								<ListItem>Go to your Google Calendar </ListItem>
-								<ListItem>Click the + sign next to "Other Calendars"</ListItem>
-								<ListItem>Select "Import"</ListItem>
-								<ListItem>Select the iCal file you downloaded</ListItem>
-								<ListItem>Click "Import"</ListItem>
+								<ListItem>Enter You Course Information</ListItem>
+								<ListItem>
+									Select <strong> Generate Calendar </strong>
+								</ListItem>
+								<ListItem>
+									Select <strong>Download Calendar</strong>
+								</ListItem>
+								<ListItem>
+									<Link
+										fontWeight={600}
+										color={'blue.600'}
+										href="https://calendar.google.com/calendar/u/0/r/settings/export"
+										isExternal
+									>
+										Click Here to import the generated ics file to your Google Calendar
+									</Link>
+								</ListItem>
+
+								<ListItem>
+									Select the <strong>my_usna_calendar.ics</strong> file you downloaded
+								</ListItem>
 							</OrderedList>
 						</Box>
 					</Stack>
 				</Flex>
 			</Box>
-			<Flex justify={'center'}>
-				<Text color={'gray.600'} fontSize={'sm'}>
-					Created by Allan Elsberry
-				</Text>
-			</Flex>
 		</Box>
 	);
 }

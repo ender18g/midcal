@@ -1,11 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import { ChakraProvider } from '@chakra-ui/react';
+import { FirebaseAppProvider } from 'reactfire';
 
-// Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,11 +19,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-	<ChakraProvider>
-		<App />
-	</ChakraProvider>
+	<FirebaseAppProvider firebaseConfig={firebaseConfig}>
+		<ChakraProvider>
+			<App />
+		</ChakraProvider>
+	</FirebaseAppProvider>
 );

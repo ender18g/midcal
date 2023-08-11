@@ -1,5 +1,5 @@
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
-import { Flex, Text, Heading, Box, Button, Image, Link } from '@chakra-ui/react';
+import { Flex, Text, Heading, Box, Button, Image, Link, Icon } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import SchedForm from './sched_form.jsx';
 import crest from './assets/crest.png';
@@ -8,6 +8,7 @@ import { AnalyticsProvider, useFirebaseApp, useAnalytics } from 'reactfire';
 import { getAnalytics, logEvent } from 'firebase/analytics';
 import { handleUpdate, addForm, generateEvents, removeForm } from './utils.js';
 import Instructions from './instructions.jsx';
+import CalIcon from './assets/calIcon.jsx';
 
 function MyPageViewLogger() {
 	const analytics = useAnalytics();
@@ -50,14 +51,17 @@ function App() {
 						boxShadow={'lg'}
 					>
 						<Box w={'100vw'} textAlign={'center'}>
-							<Heading letterSpacing={7} fontWeight={100} fontSize={'3xl'} color={'white'}>
-								📅 MidCal
-							</Heading>
+							<Flex justify={'center'} align={'center'}>
+								<Heading letterSpacing={7} fontWeight={100} fontSize={'3xl'} color={'white'}>
+									<CalIcon />
+									MidCal
+								</Heading>
+							</Flex>
 							<Text textColor={'gray.300'} fontSize={'xs'}>
 								USNA Course Calendar Generator
 							</Text>
 							<Text fontSize={'7px'} textColor={'gray.300'}>
-								Created by Allan Elsberry
+								{/* Created by Allan Elsberry */}
 							</Text>
 						</Box>
 						<Box>

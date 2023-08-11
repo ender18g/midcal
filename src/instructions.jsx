@@ -28,7 +28,7 @@ export default function Instructions() {
 					display={showInstructions ? 'block' : 'none'}
 				>
 					<OrderedList>
-						<ListItem>Enter You Course Information</ListItem>
+						<ListItem>Enter Your Course Information</ListItem>
 						<ListItem>
 							Select <strong> Generate Calendar </strong>
 						</ListItem>

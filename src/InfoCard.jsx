@@ -18,8 +18,8 @@ export default function InfoCard() {
 						</Heading>
 						<Text fontSize={'xs'}>
 							MidCal generates a calendar that contains all of your class periods. It adheres to the
-							offical USNA Academic Term Calendar and handles Thursdays that are on a Monday Schedule, no
-							midday break class schedules, USNA holidays, and more.
+							official USNA Academic Calendar and handles Thursdays that are on a Monday Schedule, early
+							class schedules, USNA holidays, and more.
 						</Text>
 						<Text color="blue.600" fontSize="sm">
 							<Link href={link} isExternal>

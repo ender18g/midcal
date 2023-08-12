@@ -1,4 +1,4 @@
-import { Flex, Input, Box, FormControl, FormHelperText, FormLabel, Button, Text } from '@chakra-ui/react';
+import { Flex, Input, Box, FormControl, FormLabel, Button, Text } from '@chakra-ui/react';
 import { DeleteIcon } from '@chakra-ui/icons';
 import { useEffect } from 'react';
 
@@ -47,16 +47,19 @@ function SchedForm(props) {
 		<Flex my={2} justify={'center'}>
 			<Box maxW={'800px'} bg="gray.50" p={3} borderRadius={'lg'} boxShadow={'md'}>
 				<Flex justify={'center'}>
-					<Text fontWeight={800}>Course {formData.id + 1}</Text>
+					<Text letterSpacing={1.5} fontWeight={300}>
+						Course {formData.id + 1}
+					</Text>
 					<Button ml={3} colorScheme="red" variant={'outline'} size={'xs'} onClick={removeForm}>
 						<DeleteIcon />
 					</Button>
 				</Flex>
 				<FormControl isRequired>
 					<Flex my={1} justify={'space-between'} align={'center'}>
-						<FormLabel>Name</FormLabel>
+						<FormLabel fontSize={'sm'}>Name</FormLabel>
 
 						<Input
+							size={'sm'}
 							w={'200px'}
 							placeholder="EW200 Section 1121"
 							value={formData.name}
@@ -69,8 +72,9 @@ function SchedForm(props) {
 
 				<FormControl isRequired>
 					<Flex my={1} justify={'space-between'} align={'center'}>
-						<FormLabel>Location</FormLabel>
+						<FormLabel fontSize={'sm'}>Location</FormLabel>
 						<Input
+							size={'sm'}
 							w={'200px'}
 							value={formData.location}
 							placeholder="Hopper 017"
@@ -83,8 +87,9 @@ function SchedForm(props) {
 
 				<FormControl isRequired>
 					<Flex my={1} justify={'space-between'} align={'center'}>
-						<FormLabel>Schedule</FormLabel>
+						<FormLabel fontSize={'sm'}>Schedule</FormLabel>
 						<Input
+							size={'sm'}
 							w={'200px'}
 							value={formData.sched}
 							onChange={(e) => {

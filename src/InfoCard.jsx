@@ -13,11 +13,13 @@ export default function InfoCard() {
 						<Image src={schedScreen} alt="USNA Schedule Page" borderRadius="lg" />
 					</Link>
 					<Stack mt="6" spacing="3">
-						<Heading size="sm">How MidCal Works</Heading>
+						<Heading letterSpacing={1.5} fontWeight={400} size="sm">
+							How MidCal Works
+						</Heading>
 						<Text fontSize={'xs'}>
-							MidCal generates a calendar file that adheres to the offical USNA Academic Term Calendar. It
-							handles Thursdays that are on a Monday Schedule, no midday break class schedules, USNA
-							holidays, and more.
+							MidCal generates a calendar that contains all of your class periods. It adheres to the
+							offical USNA Academic Term Calendar and handles Thursdays that are on a Monday Schedule, no
+							midday break class schedules, USNA holidays, and more.
 						</Text>
 						<Text color="blue.600" fontSize="sm">
 							<Link href={link} isExternal>

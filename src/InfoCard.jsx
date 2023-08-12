@@ -10,7 +10,12 @@ export default function InfoCard() {
 			<Card maxW="sm">
 				<CardBody>
 					<Link href={link} isExternal>
-						<Image src={schedScreen} alt="USNA Schedule Page" borderRadius="lg" />
+						<Image
+							src={schedScreen}
+							alt="USNA Schedule Page"
+							borderRadius="lg"
+							_hover={{ filter: 'brightness(1.05)' }}
+						/>
 					</Link>
 					<Stack mt="6" spacing="3">
 						<Heading letterSpacing={1.5} fontWeight={400} size="sm">

@@ -13,7 +13,7 @@ export default function TitleBar() {
 					</Heading>
 				</Flex>
 				<Text textColor={'gray.300'} fontSize={'xs'}>
-					USNA Calendar Generator
+					USNA Class Period Calendar Generator
 				</Text>
 				<Text fontSize={'7px'} textColor={'gray.300'}>
 					{/* Created by Allan Elsberry */}

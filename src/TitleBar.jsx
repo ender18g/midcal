@@ -15,15 +15,16 @@ export default function TitleBar() {
 				<Text textColor={'gray.300'} fontSize={'xs'}>
 					USNA Class Period Calendar Generator
 				</Text>
-				<Text fontSize={'7px'} textColor={'gray.300'}>
-					{/* Created by Allan Elsberry */}
+
+				<Text mt={0} fontSize={'7px'} textColor={'gray.300'}>
+					Created by Allan Elsberry
 				</Text>
 			</Box>
-			<Box>
-				<Link href={'https://www.usna.edu/Academics/Calendars-Events/index.php'} isExternal>
+			<Link href="https://www.usna.edu/Academics/Calendars-Events/index.php" isExternal>
+				<Flex textAlign={'center'} justifyContent={'center'} align={'center'} flexWrap={'wrap'}>
 					<Image src={crest} alt={'USNA Crest'} w={'2em'} />
-				</Link>
-			</Box>
+				</Flex>
+			</Link>
 		</Flex>
 	);
 }

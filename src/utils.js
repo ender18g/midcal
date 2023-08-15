@@ -24,7 +24,7 @@ const removeForm = (id, formsData, setFormsData) => {
 	setFormsData(formsData.filter((f) => f.id !== id));
 };
 
-const descMsg = '[p]Created by [url]https://midcal.navyrobotics.org/[/url]';
+const descMsg = '[p]Created at [url]https://midcal.navyrobotics.org/[/url]';
 
 // generate the events
 const generateEvents = (formsData) => {

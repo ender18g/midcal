@@ -85,6 +85,21 @@ function SchedForm(props) {
 					</Flex>
 				</FormControl>
 
+				<FormControl>
+					<Flex my={1} justify={'space-between'} align={'center'}>
+						<FormLabel fontSize={'sm'}>Description</FormLabel>
+						<Input
+							size={'sm'}
+							w={'200px'}
+							value={formData.description}
+							placeholder="(Optional) Additional Info"
+							onChange={(e) => {
+								setFormData({ ...formData, description: e.target.value });
+							}}
+						/>
+					</Flex>
+				</FormControl>
+
 				<FormControl isRequired>
 					<Flex my={1} justify={'space-between'} align={'center'}>
 						<FormLabel fontSize={'sm'}>Schedule</FormLabel>

@@ -1,5 +1,5 @@
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
-import { Flex, Text, Heading, Box, Button, Image, Link, Icon } from '@chakra-ui/react';
+import { Flex, Text, Box, Button, Link } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import SchedForm from './sched_form.jsx';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
@@ -28,6 +28,7 @@ function App() {
 		id: 0,
 		name: '',
 		location: '',
+		description: '',
 		sched: '',
 		slots: []
 	};

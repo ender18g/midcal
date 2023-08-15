@@ -24,6 +24,8 @@ const removeForm = (id, formsData, setFormsData) => {
 	setFormsData(formsData.filter((f) => f.id !== id));
 };
 
+const descMsg = '[p]Created by [url]https://midcal.navyrobotics.org/[/url]';
+
 // generate the events
 const generateEvents = (formsData) => {
 	// make empty event array
@@ -33,6 +35,7 @@ const generateEvents = (formsData) => {
 		// get the course name
 		const name = course.name; // got the name
 		const location = course.location; // got the location
+		const description = course.description + descMsg; // got the description
 		// loop over slots (slot is a day and period array)
 		course.slots.forEach((slot) => {
 			const day = slot.day;
@@ -56,7 +59,7 @@ const generateEvents = (formsData) => {
 								const startTime = semesterPeriod.startTime;
 								const endTime = semesterPeriod.endTime;
 								// create an event object
-								const event = { name, location, startDate, startTime, endTime };
+								const event = { name, location, startDate, startTime, endTime, description };
 								// push the event object into the events array
 								events.push(event);
 							}

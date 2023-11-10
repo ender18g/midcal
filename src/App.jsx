@@ -123,7 +123,7 @@ function App() {
 					</Flex>
 					<Flex justify={'center'}  m='3' >
 
-						<Button size={'xs'} onClick={()=>{setSeeJSON(!seeJSON)}}>View JSON</Button>
+						<Button colorScheme={'gray'} variant={'ghost'} size={'xs'} onClick={()=>{setSeeJSON(!seeJSON)}}>View JSON</Button>
 					</Flex>
 					{seeJSON && <DayJSON />}
 				</Box>

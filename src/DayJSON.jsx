@@ -14,6 +14,8 @@ export default function DayJSON() {
 
     return (
         <Flex justify={'center'} m='3'>
+            <Box>
+
             <Box maxW={'800px'} bg={'gray.100'} borderRadius={'md'} p='4' textAlign={'center'} >
                 <Heading size='md' fontWeight={'500'}>Current Schedule Array</Heading>
                 <Box>
@@ -53,6 +55,7 @@ export default function DayJSON() {
                 </Box>
             </Box>
 
+                    </Box>
         </Flex>
     )
 }

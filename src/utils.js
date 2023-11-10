@@ -43,7 +43,7 @@ const generateEvents = (formsData) => {
 			// loop over semesterDays
 			semesterDays.forEach((semesterDay) => {
 				// if the day matches
-				if (semesterDay.dow === day) {
+				if (semesterDay.dow.toLowerCase() === day) {
 					// it's a match
 					const startDate = semesterDay.date; // got the date
 					// get the schedule type

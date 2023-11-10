@@ -1,5 +1,5 @@
 import { AddToCalendarButton } from 'add-to-calendar-button-react';
-import { Flex, Text, Box, Button, Link } from '@chakra-ui/react';
+import { Flex, Text, Box, Button, Link, Heading } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import SchedForm from './sched_form.jsx';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
@@ -9,6 +9,8 @@ import { handleUpdate, addForm, generateEvents, removeForm } from './utils.js';
 import Instructions from './instructions.jsx';
 import TitleBar from './TitleBar.jsx';
 import InfoCard from './InfoCard.jsx';
+import DayJSON from './DayJSON.jsx';
+
 
 function MyPageViewLogger() {
 	const analytics = useAnalytics();
@@ -17,7 +19,7 @@ function MyPageViewLogger() {
 		() => {
 			logEvent(analytics, 'page_view', { page_location: location.href });
 		},
-		[ location.href ]
+		[location.href]
 	);
 
 	return null;
@@ -34,14 +36,19 @@ function App() {
 	};
 
 	const app = useFirebaseApp();
-	const [ formsData, setFormsData ] = useState([ initForm ]);
-	const [ allEvents, setAllEvents ] = useState([]);
+	const [formsData, setFormsData] = useState([initForm]);
+	const [allEvents, setAllEvents] = useState([]);
+	const [seeJSON, setSeeJSON] = useState(false);
 
 	return (
 		<AnalyticsProvider sdk={getAnalytics(app)}>
 			<Box w={'100vw'} h={'100vh'}>
 				<Box w={'100vw'} h={'97vh'}>
 					<TitleBar />
+					<Flex m='3' justify={'center'}>
+
+						<Heading size={'md'} color={'red.600'} fontWeight={'300'}>Now Generating Spring 2024 Calendars</Heading>
+					</Flex>
 
 					{formsData.map((course, i) => (
 						<SchedForm
@@ -93,7 +100,7 @@ function App() {
 								<Flex justify={'center'} mb={3}>
 									<AddToCalendarButton
 										name="USNA Courses"
-										options={[ 'iCal' ]}
+										options={['iCal']}
 										timeZone="America/New_York"
 										label="Download Calendar"
 										iCalFileName="my_usna_calendar"
@@ -112,7 +119,13 @@ function App() {
 						) : (
 							<InfoCard />
 						)}
+
 					</Flex>
+					<Flex justify={'center'}  m='3' >
+
+						<Button size={'xs'} onClick={()=>{setSeeJSON(!seeJSON)}}>View JSON</Button>
+					</Flex>
+					{seeJSON && <DayJSON />}
 				</Box>
 			</Box>
 			<MyPageViewLogger />

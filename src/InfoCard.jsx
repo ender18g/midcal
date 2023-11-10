@@ -4,7 +4,7 @@ import Instructions from './instructions';
 import schedScreen from './assets/schedScreen.png';
 
 export default function InfoCard() {
-	const link = 'https://www.usna.edu/Academics/_files/documents/calendars/241e1.pdf';
+	const link = 'https://www.usna.edu/Academics/_files/documents/calendars/242e1.pdf';
 	return (
 		<Flex>
 			<Card maxW="sm">
@@ -28,7 +28,7 @@ export default function InfoCard() {
 						</Text>
 						<Text color="blue.600" fontSize="sm">
 							<Link href={link} isExternal>
-								Currently Generating Fall 2023 Calendars
+								Currently Generating Spring 2024 Calendars
 							</Link>
 						</Text>
 					</Stack>

@@ -7,7 +7,7 @@ export default function TitleBar() {
 		<Flex px={5} py={2} justify={'space-between'} alignItems={'center'} bg={'blue.700'} boxShadow={'lg'}>
 			<Box w={'100vw'} textAlign={'center'}>
 				<Flex justify={'center'} align={'center'}>
-					<Heading letterSpacing={7} fontWeight={200} fontSize={'4xl'} color={'white'}>
+					<Heading letterSpacing={7} fontWeight={100} fontSize={'4xl'} color={'white'}>
 						<CalIcon />
 						MidCal
 					</Heading>

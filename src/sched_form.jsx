@@ -47,8 +47,8 @@ function SchedForm(props) {
 		<Flex my={2} justify={'center'}>
 			<Box maxW={'800px'} bg="gray.50" p={3} borderRadius={'lg'} boxShadow={'md'}>
 				<Flex justify={'center'}>
-					<Text letterSpacing={1.5} fontWeight={300}>
-						Course {formData.id + 1}
+					<Text letterSpacing={1.2} fontWeight={500}>
+						{formData.name.length > 0 ? formData.name : 'New Course'}
 					</Text>
 					<Button ml={3} colorScheme="red" variant={'outline'} size={'xs'} onClick={removeForm}>
 						<DeleteIcon />

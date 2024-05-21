@@ -46,7 +46,7 @@ function App() {
 				<Box w={'100vw'} h={'97vh'}>
 					<TitleBar />
 					<Flex m='3' justify={'center'}>
-						<Heading size={'md'} color={'red.600'} fontWeight={'300'}>Now Generating Fall AY2025 Calendars</Heading>
+						<Heading size={'md'} color={'red.600'} fontWeight={'300'}>Now Generating Fall AY 2025 Calendars</Heading>
 					</Flex>
 
 					{formsData.map((course, i) => (

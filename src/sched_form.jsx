@@ -114,6 +114,8 @@ function SchedForm(props) {
 						/>
 					</Flex>
 				</FormControl>
+				<Text textAlign={'center'} fontSize={'9'}>Use T for Tuesday, R for Thursday, and 0 for 10th period</Text>
+
 			</Box>
 		</Flex>
 	);

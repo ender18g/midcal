@@ -10,6 +10,7 @@ import Instructions from './instructions.jsx';
 import TitleBar from './TitleBar.jsx';
 import InfoCard from './InfoCard.jsx';
 import DayJSON from './DayJSON.jsx';
+import YoutubeCard from './YoutubeCard.jsx';
 
 
 function MyPageViewLogger() {
@@ -89,6 +90,9 @@ function App() {
 							Generate Calendar
 						</Button>
 					</Flex>
+					<Flex justify={'center'}>
+							<YoutubeCard />
+					</Flex>
 
 					<Flex mt={30} justify={'center'}>
 						{allEvents.length > 0 ? (
@@ -120,9 +124,9 @@ function App() {
 						)}
 
 					</Flex>
-					<Flex justify={'center'}  m='3' >
+					<Flex justify={'center'} m='3' >
 
-						<Button colorScheme={'gray'} variant={'ghost'} size={'xs'} onClick={()=>{setSeeJSON(!seeJSON)}}>View JSON</Button>
+						<Button colorScheme={'gray'} variant={'ghost'} size={'xs'} onClick={() => { setSeeJSON(!seeJSON) }}>View JSON</Button>
 					</Flex>
 					{seeJSON && <DayJSON />}
 				</Box>

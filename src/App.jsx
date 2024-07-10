@@ -43,8 +43,8 @@ function App() {
 
 	return (
 		<AnalyticsProvider sdk={getAnalytics(app)}>
-			<Box w={'100vw'} h={'100vh'}>
-				<Box w={'100vw'} h={'97vh'}>
+			<Box w={'100%'} h={'100vh'}>
+				<Box w={'100%'} h={'97vh'}>
 					<TitleBar />
 					<Flex m='3' justify={'center'}>
 						<Heading size={'md'} color={'red.600'} fontWeight={'300'}>Now Generating Fall AY 2025 Calendars</Heading>
@@ -90,9 +90,6 @@ function App() {
 							Generate Calendar
 						</Button>
 					</Flex>
-					<Flex justify={'center'}>
-							<YoutubeCard />
-					</Flex>
 
 					<Flex mt={30} justify={'center'}>
 						{allEvents.length > 0 ? (
@@ -120,9 +117,13 @@ function App() {
 								<Instructions />
 							</Box>
 						) : (
-							<InfoCard />
+							// <InfoCard />
+							<Box></Box>
 						)}
 
+					</Flex>
+					<Flex justify={'center'}>
+							<YoutubeCard />
 					</Flex>
 					<Flex justify={'center'} m='3' >
 

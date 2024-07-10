@@ -5,7 +5,7 @@ import crest from './assets/crest.png';
 export default function TitleBar() {
 	return (
 		<Flex px={5} py={2} justify={'space-between'} alignItems={'center'} bg={'blue.700'} boxShadow={'lg'}>
-			<Box w={'100vw'} textAlign={'center'}>
+			<Box w={'100%'} textAlign={'center'}>
 				<Flex justify={'center'} align={'center'}>
 					<Heading letterSpacing={7} fontWeight={100} fontSize={'4xl'} color={'white'}>
 						<CalIcon />

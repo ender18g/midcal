@@ -1,4 +1,4 @@
-import { Flex, AspectRatio, Box } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 
 
 export default function YoutubeCard() {
@@ -6,17 +6,16 @@ export default function YoutubeCard() {
 	return (
 
 	
-			<Flex pt={2}
-			minH = {400}
-			minW = {800}
-			as='iframe'
-			src={link}
-			title="YouTube Video"
-			allowFullScreen
+			<Flex p={2}
+				w={'800px'}
+				h={'400px'}
+				as='iframe'
+				src={link}
+				title="YouTube Video"
+				allowFullScreen
 			>
 	
 			</Flex>
-
 
 	);
 }
